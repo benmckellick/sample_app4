@@ -1,0 +1,29 @@
+<h1>Listing tweets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Has many</th>
+      <th></th>
+      <th>Belongs to</th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tweets.each do |tweet| %>
+      <tr>
+        
+        <td><%= tweets.content %></td>
+        <td><%= link_to 'Show', tweet %></td>
+        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Tweets', tweets_path %>
