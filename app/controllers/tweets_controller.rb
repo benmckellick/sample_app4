@@ -8,10 +8,14 @@ class TweetsController < ApplicationController
 		respond_to do |format|
 			if @tweet.save
 				format.html {redirect_to @tweet, notice: 'Tweet successfully created.' }
-			else format.html {render :new}
+			else 
+        format.html {render :new}
 			end
+    end
+  end
 
 	def show
+    @tweet = Tweet.find(params[:id])
 	end
 	def update
     respond_to do |format|
@@ -25,7 +29,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  	def destroy
+  def destroy
     @tweet.destroy
     respond_to do |format|
       format.html { redirect_to tweets_url, notice: 'Tweet was successfully destroyed.' }
@@ -35,13 +39,10 @@ class TweetsController < ApplicationController
 
 
   	private
-    
-    def set_tweet
-      @tweet = Tweet.find(params[:id])
-    end
+  
 
     def tweet_params
-      params.require(:tweet).permit(:content, :bird_id)
+      params.require(:tweet).permit(:content, :user_id)
     end
-
+  
 end
