@@ -1,7 +1,7 @@
 <%= form_for(@tweet) do |f| %>
   <% if @tweet.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
 
       <ul>
       <% @tweet.errors.full_messages.each do |message| %>
@@ -12,20 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :belongs_to %><br>
-    <%= f.text_field :belongs_to %>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
   </div>
   <div class="field">
-    <%= f.label : %><br>
-    <%= f.text_field : %>
-  </div>
-  <div class="field">
-    <%= f.label :belongs_to %><br>
-    <%= f.text_field :belongs_to %>
-  </div>
-  <div class="field">
-    <%= f.label : %><br>
-    <%= f.text_field : %>
+    <%= f.label :bird_id %><br>
+    <%= f.number_field :bird_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -3,10 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Has many</th>
-      <th></th>
-      <th>Belongs to</th>
-      <th></th>
+      <th>Content</th>
+      <th>Bird</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +12,11 @@
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        
-        <td><%= tweets.content %></td>
+        <td><%= tweet.content %></td>
+        <td><%= tweet.bird_id %></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'Tweets', tweets_path %>
+<%= link_to 'New Tweet', new_tweet_path %>
