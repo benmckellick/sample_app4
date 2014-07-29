@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+# twitter bootstrap frameworks
+# https://github.com/twbs/bootstrap-sass
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
